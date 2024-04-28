@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	config.Init()
 	p := tea.NewProgram(initialModel())
 	if _, err := p.Run(); err != nil {
 		log.Fatal(err)

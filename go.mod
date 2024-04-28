@@ -4,9 +4,11 @@ go 1.22.2
 
 require (
 	github.com/charmbracelet/bubbletea v0.25.0
+	github.com/kirsle/configdir v0.0.0-20170128060238-e45d2f54772f
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/muesli/termenv v0.15.2
 	github.com/pquerna/otp v1.4.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
