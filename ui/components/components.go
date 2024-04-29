@@ -43,7 +43,8 @@ func Progressbar(width int, percent float64) string {
 }
 
 func TOTP(currTotp totp.TOTP) string {
-	s := fmt.Sprintf("╔═══════════════════════════════════════════════════════════════════╗\n║ %s  %-25.25s %s  %s ║\n╚═══════════════════════════════════════════════════════════════════╝\n", styling.ColorFg(fmt.Sprintf("%-15.15s", currTotp.Label), styling.HighlightedColor), currTotp.Account, totp.GetCode(currTotp.Secret), Progressbar(10, float64(time.Now().UnixMilli()%30000)/30000.))
+	code := totp.GetCode(currTotp.Secret)
+	s := fmt.Sprintf(" ╔════════════════════════════════════════════════════════════════════╗\n ║ %s  %-25.25s %s  %s %s ║\n ╚════════════════════════════════════════════════════════════════════╝\n", styling.ColorFg(fmt.Sprintf("%-15.15s", currTotp.Label), styling.HighlightedColor), currTotp.Account, code[0:3],code[3:6], Progressbar(10, float64(time.Now().UnixMilli()%30000)/30000.))
 	return s
 }
 
