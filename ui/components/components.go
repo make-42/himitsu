@@ -13,7 +13,7 @@ import (
 )
 
 func VersionNumber() string {
-	return "   himitsu " + styling.ColorFg(config.Version, styling.HighlightedColor)
+	return " himitsu " + styling.ColorFg(config.Version, styling.HighlightedColor)
 }
 
 func Checkbox(label string, checked bool, selected bool) string {
@@ -49,7 +49,7 @@ func TOTP(currTotp totp.TOTP) string {
 }
 
 func KeybindsHints(keybinds []string) string {
-	s := "   "
+	s := " "
 	for index, keybind := range keybinds {
 		if index != 0 {
 			s += styling.Dot
